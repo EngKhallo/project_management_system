@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using ProjectMgtSystemApi.Models;
 
 namespace ProjectMgtSystemApi
 {
@@ -9,6 +10,6 @@ namespace ProjectMgtSystemApi
 
         }
 
-        
+        public DbSet<Users> Users => Set<Users>();
     }
 }
