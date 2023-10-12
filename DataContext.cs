@@ -11,5 +11,6 @@ namespace ProjectMgtSystemApi
         }
 
         public DbSet<Users> Users => Set<Users>();
+        public DbSet<Projects> Projects => Set<Projects>();
     }
 }
