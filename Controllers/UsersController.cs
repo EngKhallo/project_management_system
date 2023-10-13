@@ -23,6 +23,19 @@ namespace ProjectMgtSystemApi.Controllers
             return Ok(users);
         }
 
-        
+        [HttpPost]
+        public async Task<IActionResult> AddUsers([FromBody] Users users){
+            var user = new Users{
+                Name = users.Name,
+                Email = users.Email,
+                Password = users.Password,
+                Role = users.Role,
+            };
+
+            await _context.Users.AddAsync(user);
+            await _context.SaveChangesAsync();
+
+            return Created("", user);
+        }
     }
 }
